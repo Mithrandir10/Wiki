@@ -1,0 +1,36 @@
+{% extends 'encyclopedia/layout.html'%}
+{% load static %}
+<head>
+    <title>New Entry</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'index'%}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        
+        </ul>
+    </div>
+</nav>
+</head>
+{% block body %}
+<body>
+    <form method="POST" >
+        {% csrf_token %}
+        <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="Title"><br></br>
+        <label for="cont">Content</label><br></br>
+        <textarea class="form-control" id="cont" cols=200% rows=50%  name="content"></textarea>
+        <input type="submit" value="submit" class="btn btn-primary btn-lg" style="position: relative; margin-left:50% ;">
+        </div>
+    </form>
+  </body>
+  {% endblock %}
