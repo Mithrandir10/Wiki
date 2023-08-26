@@ -70,4 +70,7 @@ def edit_page(request, x):
         return HttpResponseRedirect(reverse('entry',args=(tmptitle,)))
     return render(request,"encyclopedia/edit.html",{
         "content":f,"title":x
-    })
+    })``
+    
+    
+temp changes in tut branch
